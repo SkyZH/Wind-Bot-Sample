@@ -9,9 +9,6 @@ import org.usfirst.frc.team9036.robot.commands.ServoRotateCommand;
 import org.usfirst.frc.team9036.robot.subsystems.DriveSubsystem;
 import org.usfirst.frc.team9036.robot.subsystems.ServoSubsystem;
 
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the IterativeRobot
@@ -22,8 +19,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 
 	public static final ServoSubsystem servoSubsystem = new ServoSubsystem();
+	public static final DriveSubsystem driveSubsystem = new DriveSubsystem();
+
 	public static OI oi;
-	private Command autonomousCommand;
 	
     /**
      * This function is run when the robot is first started up and should be
@@ -66,9 +64,6 @@ public class Robot extends IterativeRobot {
 			autonomousCommand = new ExampleCommand();
 			break;
 		} */
-    	
-    	autonomousCommand = new ServoRotateCommand();
-        autonomousCommand.start();
     }
 
     /**
@@ -79,11 +74,6 @@ public class Robot extends IterativeRobot {
     }
 
     public void teleopInit() {
-		// This makes sure that the autonomous stops running when
-        // teleop starts running. If you want the autonomous to 
-        // continue until interrupted by another command, remove
-        // this line or comment it out.
-        autonomousCommand.cancel();
     }
 
     /**
