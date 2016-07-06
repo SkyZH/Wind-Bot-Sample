@@ -1,6 +1,7 @@
 package org.usfirst.frc.team9036.robot;
 
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.VictorSP;
 
 /**
@@ -21,4 +22,5 @@ public class RobotMap {
     // public static int rangefinderModule = 1;
 	
 	public static RobotDrive coreRobotDrive = new RobotDrive(new VictorSP(1), new VictorSP(3), new VictorSP(2), new VictorSP(4));
+	public static Servo servo = new Servo(1);
 }
